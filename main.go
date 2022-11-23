@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	words := []string{"bella", "label", "roller"}
-	fmt.Println(_01.CommonChars(words))
-	fmt.Println("Hello World!")
+	nums := []int{1, 2, 3, 4}
+	sum := _01.ProductExceptSelf(nums)
+	fmt.Println("Hello World!", sum)
 }
