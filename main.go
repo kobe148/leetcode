@@ -7,8 +7,9 @@ import (
 )
 
 func main() {
-	nums := []int{1, 2, 3, 4, 5, 6, 7}
+	nums := []int{0, 1, 2, 4, 5, 7}
 	sum := _01.ProductExceptSelf(nums)
-	_02.Rotate(nums, 3)
-	fmt.Println("Hello World!", sum)
+	res := _02.SummaryRanges(nums)
+	fmt.Println(sum)
+	fmt.Println("Hello World!", res)
 }
