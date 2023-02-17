@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	s := "Let's take LeetCode contest"
-	res := _04.ReverseWords(s)
+	s := "   -42"
+	res := _04.MyAtoi(s)
 	fmt.Println("Hello World!", res)
 }
