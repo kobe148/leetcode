@@ -5,7 +5,7 @@ func isPowerOfTwo(n int) bool {
 
 	// 2的幂，二进制只有一个1
 	if n == 0 {
-		return true
+		return false
 	}
 	return (n & (n - 1)) == 0
 }
