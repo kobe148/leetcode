@@ -45,3 +45,34 @@ func partition(nums []int, lo, hi int) int {
 
 	return less
 }
+
+// 三路快拍
+func partition_2(nums []int, lo, hi int) int {
+	j := rand.Intn(hi-lo+1) + lo // 随机选择一个点
+
+	// 交换位置
+	nums[hi], nums[j] = nums[j], nums[hi]
+
+	pivot := nums[hi]
+
+	less, great := lo, hi
+
+	i := lo
+
+	for i <= great {
+		if nums[i] < pivot {
+			nums[less], nums[i] = nums[i], nums[less]
+			less++
+			i++
+		} else if nums[i] > pivot {
+			nums[great], nums[i] = nums[i], nums[great]
+			great--
+		} else {
+			i++
+		}
+	}
+
+	nums[hi], nums[less] = nums[less], nums[hi]
+
+	return less
+}

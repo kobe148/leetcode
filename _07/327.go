@@ -15,14 +15,13 @@ func mergeSort_327(prefixSum []int, lo int, hi int, tmp []int, lower int, upper 
 	if lo >= hi {
 		return 0
 	}
-
 	mid := lo + (hi-lo)/2
 
 	var leftSumCount = mergeSort_327(prefixSum, lo, mid, tmp, lower, upper)
 	var rightSumCount = mergeSort_327(prefixSum, mid+1, hi, tmp, lower, upper)
 
 	var count = 0
-	// 计算当前有效的区间和
+	// 计算当前有效的区间和个数
 	i, l, r := lo, mid+1, mid+1
 	for i <= mid {
 		for l <= hi && prefixSum[l]-prefixSum[i] < lower {
@@ -31,7 +30,7 @@ func mergeSort_327(prefixSum []int, lo int, hi int, tmp []int, lower int, upper 
 		for r <= hi && prefixSum[r]-prefixSum[i] <= upper {
 			r++
 		}
-		count += (r - 1)
+		count += (r - l) // 是r - l , 不是r - 1
 		i++
 	}
 
