@@ -7,6 +7,8 @@ func decodeString(s string) string {
 	res := "" // 临时字符串
 	num := 0
 
+	// 2[a2[b2[m]d]]  这种情况比较复杂
+
 	for _, char := range s {
 		// 数字的情况，直接入栈, 数字可能大于10
 		if char >= '0' && char <= '9' {
