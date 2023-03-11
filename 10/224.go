@@ -9,6 +9,7 @@ func calculate(s string) int {
 
 	for _, c := range s {
 		if c >= '0' && c <= '9' {
+			// 数字
 			num = num*10 + int(c-'0')
 		} else if c == '+' {
 			res += preSign * num
@@ -19,13 +20,15 @@ func calculate(s string) int {
 		} else if c == '(' {
 			stack = append(stack, res)
 			stack = append(stack, preSign)
-			preSign, res = 1, 0
+			preSign, res = 1, 0 // 结果清0
 		} else if c == ')' {
 			res += preSign * num
-			res *= stack[len(stack)-1]
+			res *= stack[len(stack)-1] // 这个是符号
 			stack = stack[:len(stack)-1]
-			res += stack[len(stack)-1]
+
+			res += stack[len(stack)-1] // 这个是数字
 			stack = stack[:len(stack)-1]
+
 			num = 0
 		}
 	}
