@@ -2,7 +2,7 @@ package _10
 
 func trap(height []int) int {
 	stack := make([]int, 0)
-
+	// 单调递减栈
 	res := 0
 	for i := 0; i < len(height); i++ {
 
