@@ -11,12 +11,15 @@ func longestMountain(arr []int) int {
 			for right+1 < n && arr[right] < arr[right+1] {
 				right++
 			}
+			// 循环结束的right就是最高点
 
+			// 先判断是不是最高点
 			if right+1 < n && arr[right] > arr[right+1] {
 				// 找最低点
 				for right+1 < n && arr[right] > arr[right+1] {
 					right++
 				}
+				// 循环结束的right就是最低点
 
 				if right-left+1 > ans {
 					ans = right - left + 1
