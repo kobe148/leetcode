@@ -15,6 +15,7 @@ func rotateRight(head *ListNode, k int) *ListNode {
 	if k%length == 0 {
 		return head
 	}
+
 	k = k % length
 	var newHead = reverseList(head)
 	var kthNode = newHead
