@@ -6,14 +6,14 @@ func sortList(head *ListNode) *ListNode {
 		return head
 	}
 
+	// 这个需要在计算长度之前处理，因为计算长度之后head就变成了nil了
+	var dummy = &ListNode{Next: head}
 	// 计算链表长度
 	length := 0
 	for head != nil {
 		head = head.Next
 		length++
 	}
-
-	var dummy = &ListNode{Next: head}
 
 	// 每次合并的长度
 	for step := 1; step < length; step += step {
