@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/raolf/leetcode/_05"
+	_22 "github.com/raolf/leetcode/22"
 )
 
 func main() {
-	s := 1534236469
-	res := _05.Reverse(s)
+	nums := []int{1, 2, 3}
+	res := _22.Permute2(nums)
 	fmt.Println("Hello World!", res)
 }
